@@ -19,7 +19,9 @@ const onSearchFormSubmit = (e) => {
   const query = searchForm.query.value.trim()
 
   if(!query) {
-    alert("Por favor, escribe que tipo de imágenes quieres buscar")
+    searchResult.innerHTML = `
+    <div class="no-result">Por favor, escribe qué tipo de imágenes quieres buscar</div>
+    `
     return
   }
   const apiURL = `https://api.pexels.com/v1/search?query=${query}&orientation=landscape`

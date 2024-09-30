@@ -25,13 +25,14 @@ img {
 .container {
   max-width: 1200px;
   width: 90%;
-  margin: 2rem auto;
+  margin: 8rem auto;
 }
 
 h1 {
   text-align: center;
-  color: #fff;
-  margin-bottom: 1rem;
+  color: #000;
+  font-size: 3rem;
+  margin-bottom: 3rem;
 }
 
 .search-form {
@@ -120,7 +121,7 @@ h1 {
   text-align: center;
   font-size: 2rem;
   grid-column: 1 / -1;
-  margin: 40px;
+  margin: 40px 0;
 }
 
 .loader {
@@ -149,5 +150,14 @@ h1 {
   }
   to {
     transform: rotate(1turn);
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 1rem auto;
+  }
+  h1 {
+    font-size: 2.5rem;
   }
 }
