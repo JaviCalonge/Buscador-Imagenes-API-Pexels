@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+* {
+  font-family: "Dancing Script", system-ui;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(90deg, #92d3ff, #3c749c);
+  /* deja el fondo fijo cuando las imágenes se mueven. Probar */
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.search-form {
+  max-width: 400px;
+  background-color: #fff;
+  margin: auto;
+  height: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.80);
+}
+
+.search-form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding-left: 25px;
+  padding-right: 0;
+  font-size: 1.2rem;
+}
+
+.search-form button {
+  padding: 0 6px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.search-form span[class^="material-"] {
+  font-size: 2.4rem;
+}
+
+.grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 0.8fr));
+  justify-content: center;
+  gap: 1rem;
+}
+
+.grid-item {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.40);
+}
+
+.grid-item img {
+  object-fit: cover;
+  height: 300px;
+}
+
+.image-content {
+  position: absolute;
+  /* ¿Qué es? */
+  inset: 0;
+  z-index: 5;
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+
+.image-content:hover {
+  opacity: 1;
+}
+
+.img-title {
+  color: #fff;
+  display: flex;
+  gap: 4px;
+}
+
+.img-title::before {
+  font-family: "Material Symbols Outlined";
+  content: "\e412";
+}
+
+.no-result {
+  text-align: center;
+  font-size: 2rem;
+  grid-column: 1 / -1;
+  margin: 40px;
+}
+
+.loader {
+  background-color: #133955ac;
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+
+.loader::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #051f2f;
+  border: 5px solid #000;
+  border-top: 5px solid #bdb7b7;
+  animation: spin linear 1s infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
