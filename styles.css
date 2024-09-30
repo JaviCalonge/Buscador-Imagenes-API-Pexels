@@ -16,12 +16,6 @@ body {
   flex-direction: column;
 }
 
-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 .container {
   max-width: 1200px;
   width: 90%;
@@ -89,9 +83,14 @@ h1 {
   height: 300px;
 }
 
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .image-content {
   position: absolute;
-  /* ¿Qué es? */
   inset: 0;
   z-index: 5;
   padding: 0.7rem;
